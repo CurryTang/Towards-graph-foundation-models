@@ -11,13 +11,13 @@ This repo is for those models designed for the foundation model in the graph.
 
 For a more detailed list of GT-related papers, you may check [awesome graph transformers](https://github.com/wehos/awesome-graph-transformer)
 
-### Rethinking Graph Transformers with Spectral Attention (NIPS 2021) [Paper](https://arxiv.org/pdf/2106.03893.pdf)[Code](https://github.com/DevinKreuzer/SAN)
+### Rethinking Graph Transformers with Spectral Attention (NIPS 2021) [Paper](https://arxiv.org/pdf/2106.03893.pdf) [Code](https://github.com/DevinKreuzer/SAN)
 * SAN, which uses eigenfunctions as positional encodings
 ### Do Transformers Really Perform Bad for Graph Representation? (NIPS 2021) [Paper](https://arxiv.org/abs/2106.05234) [Code](https://github.com/microsoft/Graphormer)
 * Graphormer 
 * Pure positional encoding-based designs, use \[VNODE\] as the readout
 * Transfer learning experiments first included
-### Global Self-Attention as a Replacement for Graph Convolution (EGT) (KDD 2022) [Paper](https://arxiv.org/abs/2108.03348)[Code](https://github.com/shamim-hussain/egt)
+### Global Self-Attention as a Replacement for Graph Convolution (EGT) (KDD 2022) [Paper](https://arxiv.org/abs/2108.03348) [Code](https://github.com/shamim-hussain/egt)
 * Give a solution to multi-task without clear performance loss -> explicitly learn the embeddings, and add different heads for node/edge/graph-level tasks
 ### GraphGPS: General Powerful Scalable Graph Transformers (NIPS 2022) [Paper](https://arxiv.org/abs/2205.12454) [Code](https://github.com/rampasek/GraphGPS)
 * A blueprint work that tries to revisit and summarize some recent works, which proposes the following framework (I think this is not a pure transformer since local message passing is involved): (1) positional/structural encoding; (2) local message-passing mechanism; (3) global attention mechanism
@@ -29,7 +29,7 @@ For a more detailed list of GT-related papers, you may check [awesome graph tran
 * Pure transformers can work well on graph classification tasks if we augment the original features with node identifiers and edge identifiers, achieving expressiveness better than GNNs
 * With proper tokenwise embeddings, transformers can approximate any permutation equivariant linear functions on the graph, which means f(π(x))=π(f(x))
 * How to design such embeddings: node-level: \[Xv, Pv, Pv, En\]; edge-level \[Xu,v, Pu, Pv, Ee\]; Pv is the node identifier, En/Ee is the type identifier (whether a node or an edge)
-### NAGphormer: A Tokenized Graph Transformer for Node Classification in Large Graphs (ICLR 2023) [Paper](https://openreview.net/forum?id=8KYeilT3Ow)[Code](https://github.com/JHL-HUST/NAGphormer)
+### NAGphormer: A Tokenized Graph Transformer for Node Classification in Large Graphs (ICLR 2023) [Paper](https://openreview.net/forum?id=8KYeilT3Ow) [Code](https://github.com/JHL-HUST/NAGphormer)
 * This paper is for **Node classification**
 * Hop2Token: for each node v, generate a sequence of size (k, d)-> k is the length of the sequence (k hop), d is the hidden dimension => (X, AX, A2X, ...) => "language"
 * An attention-based readout function (attention on k)
@@ -91,7 +91,7 @@ For a more detailed list of GT-related papers, you may check [awesome graph tran
 * Pretraining a transformer is very expensive, for this GROVER model, needs hundreds of GPUs to pre-train for several days. 
 
 
-### Graph Meta Learning via Local Subgraphs (NIPS 2020) [Paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/412604be30f701b1b1e3124c252065e6-Paper.pdf)[Code](https://github.com/mims-harvard/G-Meta)
+### Graph Meta Learning via Local Subgraphs (NIPS 2020) [Paper](https://proceedings.neurips.cc/paper_files/paper/2020/file/412604be30f701b1b1e3124c252065e6-Paper.pdf) [Code](https://github.com/mims-harvard/G-Meta)
 * An extension of MAML in the graph domain, with the prototype (clustering center) and ego subgraph as the bridge
 * Three scenarios were considered:
 	* Single Graph, Disjoint labels: learn from a set of samples, and test the model on another set of samples with disjoint labels
@@ -148,7 +148,7 @@ For a more detailed list of GT-related papers, you may check [awesome graph tran
 * Equivalent to matrix factorization of a matrix such as normalized graph laplacian
 * do not consider node features
 
-### LinkBERT: Pretraining Language Models with Document Links (ACL 2022)[Paper](https://arxiv.org/pdf/2203.15827.pdf)[Code](https://github.com/michiyasunaga/LinkBERT)
+### LinkBERT: Pretraining Language Models with Document Links (ACL 2022)[Paper](https://arxiv.org/pdf/2203.15827.pdf) [Code](https://github.com/michiyasunaga/LinkBERT)
 * On the basis of BERT, consider the relationship among different documents, which use the following two tasks
 	* Masked language modeling
 	* Document relation prediction: Segment documents into chunks. Given two chunks, classify their relationship into contiguous, random, or linked. 
@@ -195,12 +195,12 @@ Here for natural language, we consider both
 * Tuning T5 for node classification tasks, using link prediction as the auxiliary tasks
 * Language: Human language with node features inserted (those features are added to the vocabulary sets of the LLMs)
 
-### Graph Neural Prompting with Large Language Models (Arxiv 2023)
+### Graph Neural Prompting with Large Language Models (Arxiv 2023) [Paper](https://arxiv.org/abs/2309.15427)
 * Graph language here: embedding of the encoded graphs + text embeddings (from the LLM dictionary) of the entities => used as the prompt 
 * auxiliary link prediction tasks
 * Language: Continuous prompt generated by GNNs
 
-### GRAPHTEXT: GRAPH REASONING IN TEXT SPACE (Arxiv 2023)
+### GRAPHTEXT: GRAPH REASONING IN TEXT SPACE (Arxiv 2023) [Paper](https://openreview.net/forum?id=dbcWzalk6G)
 * Generate a graph syntax tree
 * A first-order traversal of the GST can generate a sequence of required information, which can be further adopted as the prompt
 * Propose a novel graph learning paradigm: interactive graph reasoning => Use human reminders to guide the correct reasoning steps
@@ -220,16 +220,18 @@ Here for natural language, we consider both
 
 ### IN-CONTEXT LEARNING FOR FEW-SHOT MOLECULAR PROPERTY PREDICTION (Arxiv 2023) [Paper](https://arxiv.org/pdf/2310.08863v1.pdf)
 * Demonstrate one meta-learning-inspired way to do few-shot prediction on large transformers without fine-tuning
-* Encode query, and support points together with their labels, and then concatenate them together into embeddings. Embeddings are further adopted as a prompt and inserted into the transformer. 
+* Encode query, and support points together with their labels, and then concatenate them together into embeddings. Embeddings are further adopted as a prompt and inserted into the transformer.
+
+### GraphGPT: Graph Instruction Tuning for Large Language Models (Arxiv 2023) [Paper](https://www.semanticscholar.org/paper/GraphGPT%3A-Graph-Instruction-Tuning-for-Large-Models-Tang-Yang/45872b94798c3125abfb185b7926689c5e767763?utm_source=direct_link) [Code](https://github.com/HKUDS/GraphGPT)
 
 
 ## Path 5: Unifying data in a large graph
-### PRODIGY: Enabling In-context Learning Over Graphs
+### PRODIGY: Enabling In-context Learning Over Graphs [Paper](https://arxiv.org/abs/2305.12600) [Code](https://github.com/snap-stanford/prodigy)
 * GNN-based multi-task multi-dataset setting
 * Show the knowledge between MAG and WIKI can be transferred 
 * Manually construct a large heterogeneous graph that consists of different types of nodes; use these nodes as guidance to transferring
 
-### ONE FOR ALL: TOWARDS TRAINING ONE GRAPH MODEL FOR ALL CLASSIFICATION TASKS
+### ONE FOR ALL: TOWARDS TRAINING ONE GRAPH MODEL FOR ALL CLASSIFICATION TASKS [Paper](https://arxiv.org/abs/2310.00149) [Code](https://github.com/LechengKong/OneForAll)
 * How do we align the feature space? Use sentence-bert to encode all, the attribute is required(this method can not directly work for continuous features, what they do is using a prompt to describe the attribute)
 * How to do multiple datasets? 
 	* NOI prompt node->necessary subgraphs for node/link/graph-level tasks
