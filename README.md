@@ -5,6 +5,8 @@
 This repo is for those models designed for the foundation model in the graph. 
 
 
+
+
 ## Path 1: Graph transformers
 
 For a more detailed list of GT-related papers, you may check [awesome graph transformers](https://github.com/wehos/awesome-graph-transformer)
@@ -184,6 +186,9 @@ Here for natural language, we consider both
 * Use natural language to directly describe the graph structure, and propose the NLGraph benchmark for algorithmic reasoning on the graph.
 * Language: Human language
 
+### Exploring the Potential of Large Language Models (LLMs) in Learning on Graphs (Arxiv 2023) [Paper](https://arxiv.org/abs/2307.03393) [Code](https://github.com/CurryTang/Graph-LLM)
+
+- For the LLMs-as-Predictors pipeline, propose a language based on node attributes.
 
 
 ### Natural Language is All a Graph Needs (Arxiv 2023) [Paper](https://arxiv.org/abs/2308.07134)
